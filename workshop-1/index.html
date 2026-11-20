@@ -18,7 +18,12 @@
     <a class="brand" href="/">Life Sciences Progression Workshops</a>
     <nav aria-label="Main">
       <a href="/">Home</a>
-      <a href="/workshop-1/" aria-current="page">Workshop 1</a>
+      <div class="menu">
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="ws-menu">Workshops <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <ul class="menu-list" id="ws-menu" hidden>
+          <li><a href="/workshop-1/" aria-current="page"><span class="m-num">Workshop 1</span><span class="m-focus">Scientific Report Writing</span></a></li>
+        </ul>
+      </div>
       <button class="reading-toggle" id="reading" type="button" aria-pressed="false">Easier reading</button>
     </nav>
   </div>
@@ -48,12 +53,14 @@
     <div class="wrap">
       <h2 id="plan">What happens on the day</h2>
       <ol class="timeline">
-        <li><time>4:10</time><span><b>A short talk</b> on what markers look for in a lab report.</span></li>
+        <li><time>4:10</time><span><b>Talk, part 1:</b> what markers look for in a lab report.</span></li>
         <li><time>4:25</time><span><b>Task 1: Be the marker.</b> In pairs, read a real report and rate it against the marking criteria.</span></li>
         <li><time>4:55</time><span><b>The reveal.</b> See the grade it actually got, and why.</span></li>
         <li><time>5:05</time><span>Short break.</span></li>
-        <li><time>5:10</time><span><b>Task 2: Fix the report.</b> In pairs, improve part of it, with mentors helping.</span></li>
-        <li><time>5:35</time><span><b>Takeaways and feedback</b>, then questions until 6pm.</span></li>
+        <li><time>5:10</time><span><b>Talk, part 2:</b> writing style, with a few quick try-it-yourself questions.</span></li>
+        <li><time>5:15</time><span><b>Task 2: Fix the report.</b> In pairs, rewrite six sentences and spot the problems in a table and graph.</span></li>
+        <li><time>5:35</time><span><b>Answers and share back.</b></span></li>
+        <li><time>5:40</time><span><b>Takeaways and feedback</b>, then questions until 6pm.</span></li>
       </ol>
     </div>
   </section>
@@ -83,7 +90,7 @@
         <article class="card">
           <p class="tag">Task 2</p>
           <h3>Fix the report: practice extract</h3>
-          <p>The report's Method and Results with a few extra mistakes. Download the Word version to edit it.</p>
+          <p>The report's Method and Results with a few extra mistakes. Rewrite six sentences, then list what's wrong with the table and graph. Download the Word version to type your answers.</p>
           <div class="btns">
             <a class="btn dark" href="/workshop-1/files/task-2-practice-extract.pdf">Open PDF</a>
             <a class="btn line" href="/workshop-1/files/task-2-practice-extract.docx" download>Word</a>
