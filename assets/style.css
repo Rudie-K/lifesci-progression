@@ -1,0 +1,136 @@
+/*
+  Life Sciences Progression Workshops
+  Palette from the mentors' Canva template and the workshop slides.
+  Accessibility: 18px base text, high contrast, no italics, left-aligned text,
+  visible focus, reduced motion respected, and an "easier reading" mode.
+*/
+:root {
+  --navy: #003B49;
+  --navy-2: #0B4B5B;
+  --slate: #567B8B;
+  --slate-text: #3F6573;
+  --pale: #B6CCD6;
+  --mist: #ECF1F3;
+  --paper: #FDFAF7;
+  --ink: #1F2A30;
+  --body: #34464D;
+  --on-dark: #E3EDF1;
+  --radius: 22px;
+  --measure: 68ch;
+}
+
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background: var(--mist);
+  color: var(--body);
+  font: 18px/1.65 "Inter", Verdana, Arial, sans-serif;
+  overflow-x: clip;
+}
+h1, h2, h3 { font-family: "Nunito Sans", Arial, sans-serif; color: var(--ink); line-height: 1.15; margin: 0 0 .4em; }
+h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 800; }
+h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 800; }
+h3 { font-size: 22px; font-weight: 800; }
+p, li { max-width: var(--measure); }
+a { color: var(--navy-2); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid #E0A100; outline-offset: 3px; border-radius: 6px; }
+em, i { font-style: normal; font-weight: 600; }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--paper); padding: 10px 16px; border-radius: 10px; z-index: 10; }
+.skip:focus { left: 12px; }
+
+.wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+/* Top bar */
+.topbar { background: var(--navy); color: var(--on-dark); }
+.topbar .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { color: #fff; font-family: "Nunito Sans", Arial, sans-serif; font-weight: 800; font-size: 19px; text-decoration: none; }
+.topbar nav { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; }
+.topbar nav a { color: var(--on-dark); text-decoration: none; padding: 8px 2px; }
+.topbar nav a:hover, .topbar nav a[aria-current="page"] { color: #fff; text-decoration: underline; }
+.reading-toggle {
+  font: 600 16px "Inter", Arial, sans-serif; color: var(--navy); background: var(--pale);
+  border: 0; border-radius: 999px; padding: 10px 18px; min-height: 44px; cursor: pointer;
+}
+.reading-toggle[aria-pressed="true"] { background: #fff; }
+
+/* Hero: navy panel inside a slate frame, like the Instagram story */
+.hero { background: var(--slate); padding: clamp(14px, 2.4vw, 28px); }
+.hero-panel {
+  background: var(--navy); color: var(--on-dark); border-radius: clamp(24px, 4vw, 48px);
+  padding: clamp(32px, 6vw, 72px) clamp(22px, 5vw, 64px);
+  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 32px; align-items: center;
+}
+.hero h1 { color: #fff; }
+.hero p { color: var(--on-dark); }
+.hero .pill { color: var(--navy); }
+.nowrap { white-space: nowrap; }
+.eyebrow { font: 800 15px "Nunito Sans", Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--pale); margin: 0 0 12px; }
+.pill { display: inline-block; background: var(--pale); color: var(--navy); font: 800 17px "Nunito Sans", Arial, sans-serif; padding: 6px 18px; border-radius: 999px; margin: 0 0 18px; }
+.meta { font-weight: 700; font-size: 19px; }
+.hero-art { display: flex; gap: 18px; justify-content: center; align-items: end; }
+.hero-art svg { width: clamp(90px, 14vw, 150px); height: auto; }
+
+.btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 10px 22px;
+  border-radius: 999px; font: 700 17px "Inter", Arial, sans-serif; text-decoration: none;
+  background: #fff; color: var(--navy); border: 2px solid #fff;
+}
+.btn.ghost { background: transparent; color: #fff; }
+.btn.dark { background: var(--navy); color: #fff; border-color: var(--navy); }
+.btn.line { background: var(--paper); color: var(--navy); border-color: var(--slate); }
+.btn:hover { text-decoration: underline; }
+
+/* Sections */
+.band { padding: clamp(36px, 6vw, 72px) 0; }
+.band + .band { padding-top: 0; }
+.lead { font-size: 20px; color: var(--ink); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 22px; }
+.card {
+  background: var(--paper); border: 3px solid var(--slate); border-radius: var(--radius);
+  padding: 26px 26px 22px; display: flex; flex-direction: column; gap: 8px;
+}
+.card p { margin: 0; }
+.card .btns { margin-top: auto; padding-top: 14px; }
+.card .tag { font: 800 14px "Nunito Sans", Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--slate-text); }
+.card.soon { border-style: dashed; border-color: var(--pale); background: transparent; }
+
+/* Timeline */
+.timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; max-width: 820px; }
+.timeline li { display: grid; grid-template-columns: 5.5em minmax(0, 1fr); gap: 18px; padding: 14px 0; border-top: 2px solid var(--pale); max-width: none; }
+.timeline li:last-child { border-bottom: 2px solid var(--pale); }
+.timeline time { font: 800 20px "Nunito Sans", Arial, sans-serif; color: var(--navy); white-space: nowrap; }
+.timeline b { color: var(--ink); }
+
+/* Spoiler */
+details.spoiler { background: var(--paper); border: 3px dashed var(--slate); border-radius: var(--radius); padding: 6px 24px; }
+details.spoiler summary { cursor: pointer; padding: 16px 0; font: 800 20px "Nunito Sans", Arial, sans-serif; color: var(--ink); min-height: 44px; }
+details.spoiler[open] { border-style: solid; }
+details.spoiler > div { padding-bottom: 20px; }
+
+.note { background: var(--pale); color: var(--ink); border-radius: 18px; padding: 18px 22px; }
+.note p { margin: .3em 0; }
+
+footer { background: var(--navy); color: var(--on-dark); padding: 28px 0 36px; font-size: 16px; }
+footer p { margin: .4em 0; }
+footer a { color: #fff; }
+
+/* Easier reading mode: warm background, wider spacing, bigger text */
+body.easy { background: #FBF6E9; font-size: 20px; line-height: 1.85; letter-spacing: .02em; word-spacing: .12em; }
+body.easy .card, body.easy details.spoiler { background: #FFFDF7; }
+body.easy p, body.easy li { max-width: 60ch; }
+
+@media (max-width: 760px) {
+  .hero-panel { grid-template-columns: minmax(0, 1fr); }
+  .hero-art { justify-content: flex-start; }
+  .hero-art svg { width: 84px; }
+  .timeline li { grid-template-columns: 4.5em minmax(0, 1fr); gap: 12px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card { transition: transform .2s ease; }
+  .card:hover { transform: translateY(-2px); }
+}
