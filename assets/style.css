@@ -56,6 +56,27 @@ em, i { font-style: normal; font-weight: 600; }
 }
 .reading-toggle[aria-pressed="true"] { background: #fff; }
 
+.menu { position: relative; }
+.menu-btn {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 4px;
+  background: none; border: 0; color: var(--on-dark); font: 400 18px "Inter", Arial, sans-serif; cursor: pointer;
+}
+.menu-btn:hover, .menu-btn[aria-expanded="true"] { color: #fff; text-decoration: underline; }
+.menu-btn svg { transition: transform .15s ease; }
+.menu-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.menu-list {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; list-style: none; margin: 0; padding: 8px;
+  min-width: 280px; background: var(--paper); border: 3px solid var(--slate); border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 59, 73, .25);
+}
+.menu-list li { max-width: none; }
+.menu-list a { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 12px; text-decoration: none; color: var(--ink); }
+.menu-list a:hover, .menu-list a:focus-visible { background: var(--mist); }
+.menu-list a[aria-current="page"] { background: var(--mist); }
+.m-num { font: 800 17px "Nunito Sans", Arial, sans-serif; color: var(--navy); }
+.m-focus { font-size: 16px; color: var(--body); }
+@media (max-width: 760px) { .menu-list { left: 0; right: auto; } }
+
 /* Hero: navy panel inside a slate frame, like the Instagram story */
 .hero { background: var(--slate); padding: clamp(14px, 2.4vw, 28px); }
 .hero-panel {

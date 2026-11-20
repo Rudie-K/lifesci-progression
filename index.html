@@ -18,7 +18,12 @@
     <a class="brand" href="/">Life Sciences Progression Workshops</a>
     <nav aria-label="Main">
       <a href="/" aria-current="page">Home</a>
-      <a href="/workshop-1/">Workshop 1</a>
+      <div class="menu">
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="ws-menu">Workshops <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <ul class="menu-list" id="ws-menu" hidden>
+          <li><a href="/workshop-1/"><span class="m-num">Workshop 1</span><span class="m-focus">Scientific Report Writing</span></a></li>
+        </ul>
+      </div>
       <button class="reading-toggle" id="reading" type="button" aria-pressed="false">Easier reading</button>
     </nav>
   </div>
