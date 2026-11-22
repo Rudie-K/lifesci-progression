@@ -4,6 +4,8 @@ The official website of the Life Sciences Progression Workshops, run by student 
 
 If you're a Student Mentor this repo is for you :)
 
+If you're a student or a member of the public wanting to brush up on your STEM skills, please visit our website for the frontend content: https://lifesci-progression.vercel.app/
+
 If you have any questions not answered here email me here: rk474@sussex.ac.uk
 
 It's a plain static site: HTML and CSS, with no build step.
